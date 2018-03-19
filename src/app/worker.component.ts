@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { Workers } from './workers';
+import { Workers, Worker } from './workers';
 
 @Component({
   selector: 'worker-cmp',
@@ -14,7 +14,7 @@ export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
   @Input() public label: string;
   @Input() public label2: string;
 
-  workerList: {}[];
+  workerList: Worker[];
   intervalVal = 0;
 
   private secondListSubscription: Subscription;
@@ -23,9 +23,8 @@ export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
   constructor(workers: Workers) {
     console.log('constructor', this.label);
 
-    this.secondListSubscription = workers.workerList().subscribe((data: {}[]) => {
-      this.workerList = data;
-    });
+    this.secondListSubscription = workers.workerList()
+      .subscribe(data => this.workerList = data);
 
     this.intervalHandle = setInterval(() => {
       this.intervalVal += 1;
