@@ -20,7 +20,7 @@
 </div>
 
 <worker-cmp
-  [label]="testGroup.get('testVal').value"
-  [label2]="testGroup.get('testVal2').value"
-  *ngIf="testGroup.get('showing').value"
+  [label]="testGroup.get('testVal')?.value"
+  [label2]="testGroup.get('testVal2')?.value"
+  *ngIf="testGroup.get('showing')?.value"
 ></worker-cmp>
