@@ -8,7 +8,9 @@ export interface Worker {
   first_name: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class Workers {
   constructor(private http: HttpClient) { }
 

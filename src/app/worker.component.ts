@@ -7,8 +7,7 @@ import { Workers, Worker } from './workers';
 
 @Component({
   selector: 'worker-cmp',
-  templateUrl: './worker.component.html',
-  viewProviders: [Workers]
+  templateUrl: './worker.component.html'
 })
 export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
   @Input() public label: string;
