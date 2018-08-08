@@ -1,9 +1,9 @@
 import {
-  Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges
+  Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges
 } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
-import { Workers, Worker } from './workers';
+import { Worker, Workers } from './workers';
 
 @Component({
   selector: 'worker-cmp',
