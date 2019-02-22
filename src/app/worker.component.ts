@@ -10,10 +10,10 @@ import { Worker, Workers } from './workers';
   templateUrl: './worker.component.html'
 })
 export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() public label: string;
-  @Input() public label2: string;
+  @Input() public label = '';
+  @Input() public label2 = '';
 
-  workerList: Worker[];
+  workerList: Worker[] = [];
   intervalVal = 0;
 
   private secondListSubscription: Subscription;
@@ -33,9 +33,6 @@ export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit() {
     console.log('ngOnInit', this.label);
-    if (!this.workerList) {
-      this.workerList = [];
-    }
   }
 
   ngOnChanges(changes: SimpleChanges) {
