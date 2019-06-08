@@ -12,11 +12,12 @@ export interface Worker {
   providedIn: 'root'
 })
 export class Workers {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   workerList() {
     const delayUntil: Date = new Date(Date.now() + 1600);
-    return this.http.get<Worker[]>(apiUrl + '/employees')
+    return this.http
+      .get<Worker[]>(apiUrl + '/employees')
       .pipe(delay(delayUntil));
   }
 }

@@ -1,5 +1,10 @@
 import {
-  Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -22,10 +27,11 @@ export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
   constructor(workers: Workers) {
     console.log('constructor', this.label);
 
-    this.secondListSubscription = workers.workerList()
-      .subscribe(data => this.workerList = data);
+    this.secondListSubscription = workers
+      .workerList()
+      .subscribe(data => (this.workerList = data));
 
-    this.intervalHandle = setInterval(() => {
+    this.intervalHandle = window.setInterval(() => {
       this.intervalVal += 1;
       console.log('intervalVal:', this.intervalVal);
     }, 1000);

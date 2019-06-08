@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: '<manager-cmp></manager-cmp>'
 })
-export class AppComponent { }
+export class AppComponent {}

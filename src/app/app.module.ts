@@ -8,16 +8,8 @@ import { ManagerComponent } from './manager.component';
 import { WorkerComponent } from './worker.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ManagerComponent,
-    WorkerComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
+  declarations: [AppComponent, ManagerComponent, WorkerComponent],
+  imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
