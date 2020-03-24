@@ -11,7 +11,7 @@ export interface Worker {
 @Injectable({
   providedIn: 'root'
 })
-export class Workers {
+export class WorkersService {
   constructor(private http: HttpClient) {}
 
   workerList() {

@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { Worker, Workers } from './workers';
+import { Worker, WorkersService } from './workers.service';
 
 @Component({
   selector: 'worker-cmp',
@@ -24,12 +24,15 @@ export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
   private secondListSubscription: Subscription;
   private intervalHandle: number;
 
-  constructor(workers: Workers) {
+  constructor(workers: WorkersService) {
     console.log('constructor', this.label);
 
     this.secondListSubscription = workers
       .workerList()
-      .subscribe(data => (this.workerList = data));
+      .subscribe(list => {
+        console.log('workerList updated');
+        this.workerList = list;
+      });
 
     this.intervalHandle = window.setInterval(() => {
       this.intervalVal += 1;
