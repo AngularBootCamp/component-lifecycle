@@ -5,7 +5,7 @@ import { delay } from 'rxjs/operators';
 const apiUrl = 'https://api.angularbootcamp.com';
 
 export interface Worker {
-  first_name: string;
+  firstName: string;
 }
 
 @Injectable({
