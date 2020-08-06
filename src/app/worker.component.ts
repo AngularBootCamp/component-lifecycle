@@ -15,8 +15,8 @@ import { Worker, WorkersService } from './workers.service';
   templateUrl: './worker.component.html'
 })
 export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() public label = '';
-  @Input() public label2 = '';
+  @Input() label = '';
+  @Input() label2 = '';
 
   workerList: Worker[] = [];
   intervalVal = 0;
