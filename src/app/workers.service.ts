@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay } from 'rxjs/operators';
+import { delay } from 'rxjs';
 
 const apiUrl = 'https://api.angularbootcamp.com';
 
