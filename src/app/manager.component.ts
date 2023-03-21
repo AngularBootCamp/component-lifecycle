@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  NonNullableFormBuilder
+} from '@angular/forms';
 
 @Component({
   selector: 'manager-cmp',
   templateUrl: './manager.component.html'
 })
 export class ManagerComponent {
-  testGroup: FormGroup;
+  testGroup: FormGroup<{
+    showing: FormControl<boolean>;
+    testVal: FormControl<string>;
+    testVal2: FormControl<string>;
+    testVal3: FormControl<string>;
+  }>;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: NonNullableFormBuilder) {
     this.testGroup = fb.group({
       showing: [false],
       testVal: [''],

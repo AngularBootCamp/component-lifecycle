@@ -2,25 +2,29 @@
 
 <div [formGroup]="testGroup" class="four-across">
   <div>
-    <input type="checkbox" id="check" formControlName="showing" />
+    <input
+      type="checkbox"
+      id="check"
+      [formControl]="testGroup.controls.showing"
+    />
     <label for="check">Show Workers</label>
   </div>
   <div>
-    <input id="testVal" formControlName="testVal" />
+    <input id="testVal" [formControl]="testGroup.controls.testVal" />
     <label for="testVal">testVal</label>
   </div>
   <div>
-    <input formControlName="testVal2" />
+    <input [formControl]="testGroup.controls.testVal2" />
     <label>testVal2</label>
   </div>
   <div>
-    <input formControlName="testVal3" />
+    <input [formControl]="testGroup.controls.testVal3" />
     <label>testVal3</label>
   </div>
 </div>
 
 <worker-cmp
-  [label]="testGroup.get('testVal')?.value"
-  [label2]="testGroup.get('testVal2')?.value"
-  *ngIf="testGroup.get('showing')?.value"
+  [label]="testGroup.controls.testVal.value"
+  [label2]="testGroup.controls.testVal2.value"
+  *ngIf="testGroup.controls.showing.value"
 ></worker-cmp>
