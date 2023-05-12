@@ -6,7 +6,7 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'manager-cmp',
+  selector: 'app-manager-cmp',
   templateUrl: './manager.component.html'
 })
 export class ManagerComponent {

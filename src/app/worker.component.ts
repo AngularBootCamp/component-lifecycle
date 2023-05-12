@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 import { Worker, WorkersService } from './workers.service';
 
 @Component({
-  selector: 'worker-cmp',
+  selector: 'app-worker-cmp',
   templateUrl: './worker.component.html'
 })
 export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
