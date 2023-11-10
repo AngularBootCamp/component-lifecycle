@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import {
   Component,
   Input,
@@ -12,7 +13,9 @@ import { Worker, WorkersService } from './workers.service';
 
 @Component({
   selector: 'app-worker-cmp',
-  templateUrl: './worker.component.html'
+  templateUrl: './worker.component.html',
+  standalone: true,
+  imports: [NgFor]
 })
 export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
   @Input() label = '';

@@ -1,13 +1,19 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   FormControl,
   FormGroup,
-  NonNullableFormBuilder
+  NonNullableFormBuilder,
+  ReactiveFormsModule
 } from '@angular/forms';
+
+import { WorkerComponent } from './worker.component';
 
 @Component({
   selector: 'app-manager-cmp',
-  templateUrl: './manager.component.html'
+  templateUrl: './manager.component.html',
+  standalone: true,
+  imports: [ReactiveFormsModule, NgIf, WorkerComponent]
 })
 export class ManagerComponent {
   testGroup: FormGroup<{
