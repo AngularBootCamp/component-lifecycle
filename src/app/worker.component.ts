@@ -18,8 +18,8 @@ import { Worker, WorkersService } from './workers.service';
   imports: [NgFor]
 })
 export class WorkerComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() label = '';
-  @Input() label2 = '';
+  @Input({ required: true }) label!: string;
+  @Input({ required: true }) label2!: string;
 
   workerList: Worker[] = [];
   intervalVal = 0;
