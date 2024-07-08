@@ -2,9 +2,11 @@
   <header>Worker List: {{ workerList.length }}</header>
 
   <ul>
-    <li *ngFor="let w of workerList">
-      {{ w.firstName }}
-    </li>
+    @for (w of workerList; track w) {
+      <li>
+        {{ w.firstName }}
+      </li>
+    }
   </ul>
 
   {{ label }}

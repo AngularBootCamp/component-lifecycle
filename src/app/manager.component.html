@@ -31,8 +31,9 @@
   </form>
 </article>
 
-<app-worker-cmp
-  [label]="testGroup.controls.testVal.value"
-  [label2]="testGroup.controls.testVal2.value"
-  *ngIf="testGroup.controls.showing.value"
-/>
+@if (testGroup.controls.showing.value) {
+  <app-worker-cmp
+    [label]="testGroup.controls.testVal.value"
+    [label2]="testGroup.controls.testVal2.value"
+  />
+}

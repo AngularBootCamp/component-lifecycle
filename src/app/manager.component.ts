@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   FormControl,
@@ -13,7 +12,7 @@ import { WorkerComponent } from './worker.component';
   selector: 'app-manager-cmp',
   templateUrl: './manager.component.html',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, WorkerComponent]
+  imports: [ReactiveFormsModule, WorkerComponent]
 })
 export class ManagerComponent {
   testGroup: FormGroup<{
